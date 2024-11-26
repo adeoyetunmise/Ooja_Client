@@ -19,10 +19,12 @@ const Signup = () => {
   const [formData, setFormData] = useState(initialState)
   const history = useNavigate()
   const {dispatch} = useContext(AppContext)
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+    setLoading(true)
     const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/auth/signup`, formData);
     console.log(res.data);
     localStorage.setItem("user", JSON.stringify(res.data))
@@ -33,6 +35,8 @@ const Signup = () => {
 }catch (error) {
     console.log(error);
     toast.error(error.response.data.message || error.response.data.error || "An error occured")
+}finally{
+  setLoading(false)
 }
 }
 
@@ -206,9 +210,11 @@ const handleChange = (e) => {
 
       <button
         type="submit"
-        className="block w-full rounded-lg bg-rose-500 text-white px-5 py-3 text-lg font-medium "
+        className={`block w-full rounded-lg bg-rose-500 text-white px-5 py-3 text-lg font-medium
+           ${loading? "cursor-not-allowed opacity-50": ""} `}
+           disabled = {loading}
       >
-        Sign Up
+        {loading?"Loading...": "Sign Up"}
       </button>
 
       <p className="text-center text-sm text-white">

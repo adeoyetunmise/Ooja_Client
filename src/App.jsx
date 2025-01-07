@@ -9,8 +9,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useContext } from 'react'
 import { AppContext } from './contexts/AppContext'
 import Dashboard from './pages/main/Dashboard'
-import UploadProduct from './components/UploadProduct'
-import EditProduct from './components/EditProduct'
+import UploadProduct from './pages/main/UploadProduct'
+import EditProduct from './pages/main/EditProduct'
 
 
 

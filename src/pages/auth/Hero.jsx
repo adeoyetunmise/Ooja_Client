@@ -16,9 +16,9 @@ const Hero = () => {
           {/* Logo Section */}
           <div className="text-black text-2xl font-semibold flex items-center">
             <Link to="/mainpage">
-              <img src="/svgs/buy.svg" alt="Ooja logo" width={60} className="sm:w-[100px]" />
+              <img src="/svgs/buy.svg" alt="Ooja logo" width={70} className="sm:w-[100px]" />
             </Link>
-            <h2 className="font-iceberg md:text-3xl text-2xl sm:text-5xl">Ooja</h2>
+            <h2 className="font-iceberg md:text-3xl text-3xl sm:text-5xl">Ooja</h2>
           </div>
 
           {/* Mobile menu button */}
@@ -55,10 +55,10 @@ const Hero = () => {
         {/* Mobile menu (hidden by default) */}
         {isMobileMenuOpen && (
           <div className="lg:hidden text-black p-2 space-y-1 text-center">
-            <Link to="/login" className="block  py-2 px-4 rounded-md font-bold text-sm sm:text-base text-black hover:text-blue-300">
+            <Link to="/login" className="block  py-2 px-4 rounded-md font-bold text-lg sm:text-base text-black hover:text-blue-300">
               Log In
             </Link>
-            <Link to="/signup" className="block py-2 px-4 rounded-md font-bold text-sm sm:text-base text-black  hover:text-blue-300">
+            <Link to="/signup" className="block py-2 px-4 rounded-md font-bold text-lg sm:text-base text-black  hover:text-blue-300">
               Sign Up
             </Link>
           </div>

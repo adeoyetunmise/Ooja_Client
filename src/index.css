@@ -11,3 +11,7 @@
 body{
     @apply font-montserrat
 }
+
+/* html, body {
+    overflow-y: hidden;
+} */
